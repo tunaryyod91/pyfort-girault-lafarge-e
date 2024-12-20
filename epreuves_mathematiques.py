@@ -94,12 +94,16 @@ def epreuve_equation_lineaire():
 #epreuve_equation_lineaire()
 
 
-
-
 def epreuves_maths():
-    epreuves = [epreuve_equation_lineaire,epreuve_math_factorielle,epreuve_roulette_mathematique]
-    choix = choice(epreuves)
-    if choix():
-        print("Clé obtenue !")
-    else:
-        print("Pas de clé gagnée.")
+    epreuves = ["epreuve_equation_lineaire","epreuve_math_factorielle","epreuve_roulette_mathematique"]
+
+    match choice(epreuves):
+        case "epreuve_equation_lineaire":
+            return epreuve_equation_lineaire()
+        case "epreuve_math_factorielle":
+            return epreuve_math_factorielle()
+        case "epreuve_roulette_mathematique":
+            return epreuve_roulette_mathematique()
+        case _:
+            print("epreuve inexistante")
+            return False
