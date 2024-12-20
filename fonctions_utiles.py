@@ -75,3 +75,13 @@ def choisir_joueur(equipe):
             print("Entrée invalide. Veuillez entrer un numéro.")
             choix = 0
     return equipe[choix - 1]
+
+def choix_equipe():
+    if composer_equipe() == 2:
+        print("Vous devez choisir parmi les 2 joueurs.")
+        x=int(input("lequel souhaitez vous : \n1° joueur 1\n2° joueur 2\n"))
+        print("le joueur", x, "réalisera l'épreuve")
+    if composer_equipe() == 3:
+        print("Vous devez choisir parmi les 3 joueurs.")
+        x = int(input("lequel souhaitez vous : \n1° joueur 1\n2° joueur 2\n3° joueur 3\n"))
+        print("le joueur", x,"réalisera l'épreuve")
