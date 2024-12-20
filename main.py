@@ -1,6 +1,6 @@
-from epreuves_maths import *
-from epreuve_logique import *
-from epreuve_hasard import *
+from epreuves_mathematiques import *
+from epreuves_logiques import *
+from epreuves_hasard import *
 from enigme_pere_fouras import *
 from fonctions_utiles import *
 
