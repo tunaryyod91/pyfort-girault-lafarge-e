@@ -47,4 +47,20 @@ def jeu_batonnets():
         # Retirer les bâtonnets
         n -= x
         joueur_tour = not joueur_tour  # Passer le tour à l'autre joueur
-int("Pas de clé gagnée.")
+
+    # Déterminer le perdant
+    if joueur_tour:
+        print("Vous avez retiré le dernier bâtonnet. Vous avez perdu !")
+        return False
+    else:
+        print("Le maître du jeu a retiré le dernier bâtonnet. Vous avez gagné une clé !")
+        return True
+
+def epreuves_logiques():
+    print("MODE DEBUG")
+    print("----------------------------------------")
+    return True
+ #   if jeu_batonnets():
+  #      print("Clé obtenue ! ")
+  #  else:
+   #     print("Pas de clé gagnée.")
