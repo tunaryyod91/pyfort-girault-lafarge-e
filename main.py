@@ -1,3 +1,32 @@
+from epreuves_maths import *
+from epreuve_logique import *
+from epreuve_hasard import *
+from enigme_pere_fouras import *
+from fonctions_utiles import *
+
+def start():
+    key = 0
+    #equipe()
+    print("NOMBRE DE KEYS : ", key)
+    if epreuves_maths():
+        key += 1
+    print("NOMBRE DE KEYS : ",key)
+    if epreuves_hasard():
+        key += 1
+    print("NOMBRE DE KEYS : ", key)
+    if epreuves_logiques():
+        key += 1
+    print("NOMBRE DE KEYS : ",key)
+    if key == 3:
+            print("Bravo vous avez gagné ! ")
+    if enigmePF():
+        key += 1
+    print("NOMBRE DE KEYS : ", key)
+
+    if key >= 3:
+        print("Bravo vous avez gagné ! ")
+print("Bienvenue dans le jeu Fort Boyard")
+
 def main_menu():
     print("Menu principal:")
     print("1. Commencer le jeu")
@@ -38,3 +67,7 @@ Formez votre équipe, relevez les épreuves, et partez à la conquête du tréso
         print("Fait par Paul GIRAULT et Edouard LAFARGE")
 
 main_menu()
+
+
+
+
