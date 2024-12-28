@@ -5,6 +5,8 @@ from enigme_pere_fouras import *
 from fonctions_utiles import *
 
 def start():
+    composer_equipe()
+    choix_equipe()
     key = 0
     #equipe()
     print("NOMBRE DE KEYS : ", key)

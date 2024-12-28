@@ -22,11 +22,9 @@ def composer_equipe():
     for i in range(nb_joueurs):
         print(f"Joueur {i + 1} :")
         nom = input("Nom : ")
-        profession = input("Profession : ")
         is_leader = input("Est-ce le leader de l'équipe ? (oui/non) : ").strip().lower() == "oui"
         joueur = {
             "nom": nom,
-            "profession": profession,
             "leader": is_leader,
             "cles_gagnees": 0
         }
@@ -38,6 +36,11 @@ def composer_equipe():
 
     print("\nÉquipe composée avec succès !")
     return equipe
+
+def choix_equipe():
+    print("vous devez choisir qui dans votre équipe réalisera le prochain défi\n ")
+    n = int(input("lequel souhaitez vous ?\n indiquez son numéro : "))
+    print("le joueur", n ,"réalisera le défi : ")
 
 
 def menu_epreuves():
@@ -76,12 +79,3 @@ def choisir_joueur(equipe):
             choix = 0
     return equipe[choix - 1]
 
-def choix_equipe():
-    if composer_equipe() == 2:
-        print("Vous devez choisir parmi les 2 joueurs.")
-        x=int(input("lequel souhaitez vous : \n1° joueur 1\n2° joueur 2\n"))
-        print("le joueur", x, "réalisera l'épreuve")
-    if composer_equipe() == 3:
-        print("Vous devez choisir parmi les 3 joueurs.")
-        x = int(input("lequel souhaitez vous : \n1° joueur 1\n2° joueur 2\n3° joueur 3\n"))
-        print("le joueur", x,"réalisera l'épreuve")
