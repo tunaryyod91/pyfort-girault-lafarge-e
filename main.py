@@ -3,6 +3,7 @@ from epreuves_logiques import *
 from epreuves_hasard import *
 from enigme_pere_fouras import *
 from fonctions_utiles import *
+from epreuve_finale import *
 
 def start():
     composer_equipe()
@@ -26,7 +27,8 @@ def start():
     print("NOMBRE DE KEYS : ", key)
 
     if key >= 3:
-        print("Bravo vous avez gagné ! ")
+        print("bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        epreuve_finale()
 print("Bienvenue dans le jeu Fort Boyard")
 
 def main_menu():
