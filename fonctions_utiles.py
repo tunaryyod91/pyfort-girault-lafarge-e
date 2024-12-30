@@ -40,7 +40,7 @@ def composer_equipe():
 def choix_equipe():
     print("vous devez choisir qui dans votre équipe réalisera le prochain défi\n ")
     n = int(input("lequel souhaitez vous ?\n indiquez son numéro : "))
-    print("le joueur", n ,"réalisera le défi : ")
+    print("le joueur", n ,"réalisera le défi ")
 
 
 def menu_epreuves():
@@ -78,4 +78,5 @@ def choisir_joueur(equipe):
             print("Entrée invalide. Veuillez entrer un numéro.")
             choix = 0
     return equipe[choix - 1]
+
 

@@ -18,16 +18,12 @@ def enigmePF():
             print(f"Numéro : {enigme_choisie.get('numero', 'Inconnu')}")
             print(f"Type : {enigme_choisie.get('type', 'Inconnu')}")
             print(f"Question : {enigme_choisie.get('question', 'Pas de question')}")
-            solution = input(f"veuillez saisir la réponse : ")
             for i in range(2):
+                solution = input(f"veuillez saisir la réponse : ")
                 if solution.strip().lower() == enigme_choisie.get('reponse', '').strip().lower():
                     print("Félicitations ! Votre réponse est correcte.")
-                    break
-                else:
-                    if i == 0:
+                elif i == 0:
                         print("Ce n'est pas la bonne réponse, veuillez réessayer. Il vous reste 1 essai.")
-                    else:
-                        print(f"Dommage ! La bonne réponse était : {enigme_choisie.get('reponse', 'Pas de réponse')}")
 
     except FileNotFoundError:
         print("Erreur : Le fichier JSON spécifié est introuvable.")
