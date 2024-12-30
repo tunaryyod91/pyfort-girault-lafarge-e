@@ -1,5 +1,6 @@
 import json
 import random
+
 def enigmePF():
     cpt = 0
     # Chargement du fichier JSON
@@ -22,6 +23,7 @@ def enigmePF():
                 solution = input(f"veuillez saisir la réponse : ")
                 if solution.strip().lower() == enigme_choisie.get('reponse', '').strip().lower():
                     print("Félicitations ! Votre réponse est correcte.")
+                    return True
                 elif i == 0:
                         print("Ce n'est pas la bonne réponse, veuillez réessayer. Il vous reste 1 essai.")
 

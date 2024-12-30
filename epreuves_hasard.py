@@ -55,5 +55,7 @@ def epreuves_hasard():
     choix = choice(epreuves)
     if choix():  # Appel de l'épreuve choisie
         print(f"Clé obtenue ! ")
+        return True
     else:
         print(f"Pas de clé gagnée. ")
+        return False

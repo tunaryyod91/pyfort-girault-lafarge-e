@@ -23,7 +23,6 @@ def composer_equipe():
         print(f"Joueur {i + 1} :")
         nom = input("Nom : ")
         is_leader = input("Est-ce le leader de l'équipe ? (oui/non) : ").strip().lower() == "oui"
-
         joueur = {
             "nom": nom,
             "leader": is_leader,
@@ -40,10 +39,7 @@ def composer_equipe():
 
 def choix_equipe():
     print("vous devez choisir qui dans votre équipe réalisera le prochain défi\n ")
-    n = int(input("quel joueur souhaitez vous ?\n indiquez son numéro : "))
-    while n < 1 or n > 3:
-        n=int(input("saisissez un numéro correcte : "))
-        break
+    n = int(input("lequel souhaitez vous ?\n indiquez son numéro : "))
     print("le joueur", n ,"réalisera le défi ")
 
 

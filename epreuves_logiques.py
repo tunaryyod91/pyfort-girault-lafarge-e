@@ -57,10 +57,12 @@ def jeu_batonnets():
         return True
 
 def epreuves_logiques():
-    print("MODE DEBUG")
-    print("----------------------------------------")
-    return True
- #   if jeu_batonnets():
-  #      print("Clé obtenue ! ")
-  #  else:
-   #     print("Pas de clé gagnée.")
+    #print("MODE DEBUG")
+    #print("----------------------------------------")
+    #return True
+    if jeu_batonnets():
+        print("Clé obtenue ! ")
+        return True
+    else:
+        print("Pas de clé gagnée.")
+        return False

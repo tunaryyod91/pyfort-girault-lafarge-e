@@ -11,24 +11,43 @@ def start():
     key = 0
     #equipe()
     print("NOMBRE DE KEYS : ", key)
+    if key >= 3:
+        print(
+            "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        salle_De_Tresor()
     if epreuves_maths():
         key += 1
     print("NOMBRE DE KEYS : ",key)
+    if key >= 3:
+        print(
+            "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        salle_De_Tresor()
     if epreuves_hasard():
         key += 1
     print("NOMBRE DE KEYS : ", key)
+    if key >= 3:
+        print(
+            "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        salle_De_Tresor()
     if epreuves_logiques():
         key += 1
     print("NOMBRE DE KEYS : ",key)
-    if key == 3:
-            print("Bravo vous avez gagné ! ")
+    if key >= 3:
+        print(
+            "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        salle_De_Tresor()
+
     if enigmePF():
         key += 1
+        if key >= 3:
+            print(
+                "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+            salle_De_Tresor()
     print("NOMBRE DE KEYS : ", key)
 
     if key >= 3:
         print("bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
-        epreuve_finale()
+        salle_De_Tresor()
 print("Bienvenue dans le jeu Fort Boyard")
 
 def main_menu():
