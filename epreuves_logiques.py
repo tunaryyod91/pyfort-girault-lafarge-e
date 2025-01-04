@@ -2,6 +2,7 @@ def affiche_batonnets(n):
     """Affiche les bâtonnets restants."""
     print(f"Bâtonnets restants: {'|' * n} ({n})")
 
+
 def joueur_retrait(n):
     """Demande au joueur combien de bâtonnets retirer."""
     while True:
@@ -13,7 +14,8 @@ def joueur_retrait(n):
                 print(f"Veuillez entrer un nombre entre 1 et 3, inférieur ou égal à {n}.")
         except ValueError:
             print("Veuillez entrer un nombre valide.")
-
+affiche_batonnets(21)
+joueur_retrait(20)
 def maitre_retrait(n):
     """Détermine combien de bâtonnets le maître du jeu retire."""
     if n % 4 == 0:
@@ -66,3 +68,4 @@ def epreuves_logiques():
     else:
         print("Pas de clé gagnée.")
         return False
+
