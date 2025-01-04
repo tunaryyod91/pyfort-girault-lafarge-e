@@ -78,23 +78,28 @@ def resoudre_equation_lineaire():
     numberA = random.randint(1, 10)  # Coefficient non nul
     numberB = random.randint(1, 10)
     resultat_calcul = -numberB / numberA
-    return [numberA, numberB, resultat_calcul]
-
-
+    resultat_calcul_arrondi = round(resultat_calcul,1)
+    #test mode
+    #print(numberA)
+    #print(numberB)
+    #print(resultat_calcul_arrondi)
+    #fin test mode
+    return [numberA, numberB, resultat_calcul_arrondi]
+#resoudre_equation_lineaire()
 def epreuve_equation_lineaire():
     liste2 = resoudre_equation_lineaire()
     print(f"Épreuve de Mathématiques : Résoudre l'équation {liste2[0]}x + {liste2[1]} = 0.")
 
     try:
-        x = float(input("Quelle est la valeur de x : "))
-        if x==list[2]:
+        x = float(input("Quelle est la valeur de x (Arrondi à 1 chiffre après la virgule) : "))
+        if x==liste2[2]:
             print("Bravo, votre réponse est correcte, vous gagnez une clé !")
             return True
         else:
-            print(f"Perdu ! La bonne réponse était {liste2[2]:.2f}.")
+            print(f"Perdu ! La bonne réponse était {liste2[2]}")
             return False
     except ValueError:
-        print("Entrée invalide. Veuillez entrer un nombre réel avec au plus 2 chiffres après la virgule.")
+        print("Entrée invalide. Veuillez entrer un nombre réel avec au plus 1 chiffre après la virgule.")
         return False
 
 
@@ -137,4 +142,3 @@ def epreuves_maths():
             print("epreuve inexistante")
             return False
 
-epreuve_equation_lineaire()
