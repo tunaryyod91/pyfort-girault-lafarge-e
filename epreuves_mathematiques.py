@@ -1,4 +1,6 @@
 from random import *
+import random
+
 def factorielle(n):
     resultat = 1
     factorielle=1
@@ -72,7 +74,34 @@ def epreuve_roulette_mathematique():
 
 #epreuve_roulette_mathematique()
 
+def resoudre_equation_lineaire():
+    numberA = random.randint(1, 10)  # Coefficient non nul
+    numberB = random.randint(1, 10)
+    resultat_calcul = -numberB / numberA
+    return [numberA, numberB, resultat_calcul]
 
+
+def epreuve_equation_lineaire():
+    liste2 = resoudre_equation_lineaire()
+    print(f"Épreuve de Mathématiques : Résoudre l'équation {liste2[0]}x + {liste2[1]} = 0.")
+
+    try:
+        x = float(input("Quelle est la valeur de x : "))
+        if x==list[2]:
+            print("Bravo, votre réponse est correcte, vous gagnez une clé !")
+            return True
+        else:
+            print(f"Perdu ! La bonne réponse était {liste2[2]:.2f}.")
+            return False
+    except ValueError:
+        print("Entrée invalide. Veuillez entrer un nombre réel avec au plus 2 chiffres après la virgule.")
+        return False
+
+
+# Pour tester la fonction :
+# epreuve_equation_lineaire()
+
+'''
 def resoudre_equation_lineaire() :
     numberA = randint(1,10)
     numberB = randint(1,10)
@@ -92,7 +121,7 @@ def epreuve_equation_lineaire():
         print("Perdu ! ")
         return False
 #epreuve_equation_lineaire()
-
+'''
 
 def epreuves_maths():
     epreuves = ["epreuve_equation_lineaire","epreuve_math_factorielle","epreuve_roulette_mathematique"]
@@ -107,3 +136,5 @@ def epreuves_maths():
         case _:
             print("epreuve inexistante")
             return False
+
+epreuve_equation_lineaire()
