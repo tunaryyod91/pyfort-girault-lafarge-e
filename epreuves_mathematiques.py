@@ -75,36 +75,44 @@ def epreuve_roulette_mathematique():
 #epreuve_roulette_mathematique()
 
 def resoudre_equation_lineaire():
-    numberA = random.randint(1, 10)  # Coefficient non nul
-    numberB = random.randint(1, 10)
-    resultat_calcul = -numberB / numberA
-    resultat_calcul_arrondi = round(resultat_calcul,1)
+    denominateur = random.randint(1, 10)  # Coefficient non nul
+    numerateur = random.randint(1, 10)
+
+
+
     #test mode
     #print(numberA)
     #print(numberB)
     #print(resultat_calcul_arrondi)
     #fin test mode
-    return [numberA, numberB, resultat_calcul_arrondi]
+    return [denominateur, numerateur]
 #resoudre_equation_lineaire()
 def epreuve_equation_lineaire():
     liste2 = resoudre_equation_lineaire()
     print(f"Épreuve de Mathématiques : Résoudre l'équation {liste2[0]}x + {liste2[1]} = 0.")
 
-    try:
-        x = float(input("Quelle est la valeur de x (Arrondi à 1 chiffre après la virgule) : "))
-        if x==liste2[2]:
-            print("Bravo, votre réponse est correcte, vous gagnez une clé !")
-            return True
+
+    user_input = input("Veuillez entrer un nombre sous la forme 'numérateur/dénominateur' : ")
+    if '/' in user_input:
+        try:
+            numerateur, denominateur = user_input.split('/')  # Sépare le numérateur et le dénominateur
+            numerateur = int(numerateur.strip())  # Convertit le numérateur en entier
+            denominateur = int(denominateur.strip())  # Convertit le dénominateur en entier
+            if denominateur == 0:
+                print("Le dénominateur ne peut pas être zéro. Réessayez.")
+
+            if abs(numerateur / denominateur) == abs(liste2[1] / liste2[0]):
+                print("c'est la bonne réponse")
+                print(f"Valeur décimale : {numerateur / denominateur}")
+                return True
+        except ValueError:
+                print(
+                    "Entrée invalide. Assurez-vous de respecter le format 'numérateur/dénominateur' avec des nombres entiers.")
+                return False
         else:
-            print(f"Perdu ! La bonne réponse était {liste2[2]}")
+            print("Entrée invalide. Le format attendu est 'numérateur/dénominateur'.")
             return False
-    except ValueError:
-        print("Entrée invalide. Veuillez entrer un nombre réel avec au plus 1 chiffre après la virgule.")
-        return False
 
-
-# Pour tester la fonction :
-# epreuve_equation_lineaire()
 
 '''
 def resoudre_equation_lineaire() :
