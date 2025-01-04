@@ -6,9 +6,9 @@ from fonctions_utiles import *
 from epreuve_finale import *
 
 def start():
-    composer_equipe()
+    equipe=composer_equipe()
     print("\n")
-    choix_equipe()
+    choix_equipe(equipe)
     print("\n")
     key = 0
     #equipe()

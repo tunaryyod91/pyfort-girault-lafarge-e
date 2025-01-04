@@ -47,15 +47,23 @@ def composer_equipe():
     print("\nÉquipe composée avec succès !")
     return equipe
 
-def choix_equipe():
-    nb_joueurs = composer_equipe()
-    print("vous devez choisir qui dans votre équipe réalisera le prochain défi\n ")
-    n = int(input("lequel souhaitez vous ?\n indiquez son numéro : "))
-    while n<=1 or n>=nb_joueurs:
-        print("veuillez choisir un nombre entre 1 et", nb_joueurs)
-        break
-    print("le joueur", n ,"réalisera le défi ")
+def choix_equipe(equipe):
+    print("\nVous devez choisir un joueur pour réaliser le prochain défi.\n")
+    print("Voici les joueurs disponibles :")
+    for i, joueur in enumerate(equipe, start=1):
+        print(f"{i}. {joueur['nom']}")
 
+    while True:
+        choix = input("\nIndiquez le numéro du joueur choisi : ")
+        if choix.isdigit():
+            choix = int(choix)
+            if 1 <= choix <= len(equipe):
+                print(f"\nLe joueur {equipe[choix - 1]['nom']} réalisera le défi.")
+                return
+            else:
+                print(f"Veuillez choisir un nombre entre 1 et {len(equipe)}.")
+        else:
+            print("Veuillez entrer un nombre valide.")
 
 def menu_epreuves():
     print("\nMenu des épreuves :")
