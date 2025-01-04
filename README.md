@@ -154,3 +154,10 @@ Stratégies de Test
 
 Résultats
 	•	Tous les tests ont été validés avec succès.
+Menu principal :
+![img.png](data/img.png)
+composition equipes : 
+![img2.png](data/img2.png)
+Epreuves : 
+![img.png](data/img3.png)
+![img.png](data/img4.png)
