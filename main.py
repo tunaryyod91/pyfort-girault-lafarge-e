@@ -7,21 +7,30 @@ from epreuve_finale import *
 
 def start():
     composer_equipe()
+    print("\n")
     choix_equipe()
+    print("\n")
     key = 0
     #equipe()
     print("Nombres de clés  : ", key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        print("\n")
         salle_De_Tresor()
+        print("\n")
+
     if epreuves_maths():
         key += 1
     print("Nombres de clés  : ",key)
+    print("\n")
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        print("\n")
         salle_De_Tresor()
+        print("\n")
+
     if epreuves_hasard():
         key += 1
     print("Nombres de clés  : : ", key)
@@ -29,12 +38,18 @@ def start():
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
         salle_De_Tresor()
+        print("\n")
+        print("\n")
+        print("\n")
     if epreuves_logiques():
         key += 1
     print("Nombres de clés  : : ",key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
+        print("\n")
+        print("\n")
+        print("\n")
         salle_De_Tresor()
 
     if enigmePF():
@@ -60,6 +75,7 @@ def main_menu():
     while(x<1 or x>4):
         print("Saisir un nombre entre 1 et 4 : ")
     if x==1:
+        print("\n")
         start()
     if x==2:
         print("Bienvenue dans fort Boyard")
