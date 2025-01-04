@@ -10,28 +10,28 @@ def start():
     choix_equipe()
     key = 0
     #equipe()
-    print("NOMBRE DE KEYS : ", key)
+    print("Nombres de clés  : ", key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
         salle_De_Tresor()
     if epreuves_maths():
         key += 1
-    print("NOMBRE DE KEYS : ",key)
+    print("Nombres de clés  : ",key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
         salle_De_Tresor()
     if epreuves_hasard():
         key += 1
-    print("NOMBRE DE KEYS : ", key)
+    print("Nombres de clés  : : ", key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
         salle_De_Tresor()
     if epreuves_logiques():
         key += 1
-    print("NOMBRE DE KEYS : ",key)
+    print("Nombres de clés  : : ",key)
     if key >= 3:
         print(
             "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
@@ -43,7 +43,7 @@ def start():
             print(
                 "bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
             salle_De_Tresor()
-    print("NOMBRE DE KEYS : ", key)
+    print("Nombres de clés  : : ", key)
 
     if key >= 3:
         print("bien joué vous avez obtenu assez de clés pour l'épreuve finale mais saurez-vous la résoudre pour sortir de ce fort indemne?")
