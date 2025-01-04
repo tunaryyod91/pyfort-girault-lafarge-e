@@ -5,6 +5,14 @@ def introduction():
     print("2. Collectez 3 clés pour accéder à la salle du trésor.")
     print("Bonne chance !\n")
 
+def saisie_securisee():
+    while True:
+        is_leader = input("Est-ce le leader de l'équipe ? (oui/non) : ").strip().lower()
+        if is_leader in ['oui', 'non']:
+            return is_leader=='oui'
+        else:
+            print("Réponse invalide. Veuillez répondre uniquement par 'oui' ou 'non'.")
+
 
 def composer_equipe():
     equipe = []
@@ -21,8 +29,10 @@ def composer_equipe():
 
     for i in range(nb_joueurs):
         print(f"Joueur {i + 1} :")
-        nom = input("Nom : ")
-        is_leader = input("Est-ce le leader de l'équipe ? (oui/non) : ").strip().lower() == "oui"
+        nom = input("Nom : ").strip()
+        is_leader=saisie_securisee()
+
+
         joueur = {
             "nom": nom,
             "leader": is_leader,
@@ -38,8 +48,12 @@ def composer_equipe():
     return equipe
 
 def choix_equipe():
+    nb_joueurs = composer_equipe()
     print("vous devez choisir qui dans votre équipe réalisera le prochain défi\n ")
     n = int(input("lequel souhaitez vous ?\n indiquez son numéro : "))
+    while n<=1 or n>=nb_joueurs:
+        print("veuillez choisir un nombre entre 1 et", nb_joueurs)
+        break
     print("le joueur", n ,"réalisera le défi ")
 
 
@@ -78,3 +92,4 @@ def choisir_joueur(equipe):
             print("Entrée invalide. Veuillez entrer un numéro.")
             choix = 0
     return equipe[choix - 1]
+
