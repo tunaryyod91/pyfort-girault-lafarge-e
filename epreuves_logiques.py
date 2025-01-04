@@ -1,7 +1,9 @@
+import random
+
+
 def affiche_batonnets(n):
     """Affiche les bâtonnets restants."""
     print(f"Bâtonnets restants: {'|' * n} ({n})")
-
 
 def joueur_retrait(n):
     """Demande au joueur combien de bâtonnets retirer."""
@@ -14,8 +16,7 @@ def joueur_retrait(n):
                 print(f"Veuillez entrer un nombre entre 1 et 3, inférieur ou égal à {n}.")
         except ValueError:
             print("Veuillez entrer un nombre valide.")
-affiche_batonnets(21)
-joueur_retrait(20)
+
 def maitre_retrait(n):
     """Détermine combien de bâtonnets le maître du jeu retire."""
     if n % 4 == 0:
@@ -68,4 +69,80 @@ def epreuves_logiques():
     else:
         print("Pas de clé gagnée.")
         return False
+
+
+def afficher_grille(grille):
+    for ligne in grille:
+        print(" | ".join(ligne))
+        print("-" * 9)
+
+def verifier_victoire(grille, symbole):
+    # Vérifie les lignes et les colonnes
+    for i in range(3):
+        if all(grille[i][j] == symbole for j in range(3)) or all(grille[j][i] == symbole for j in range(3)):
+            return True
+    # Vérifie les diagonales
+    if all(grille[i][i] == symbole for i in range(3)) or all(grille[i][2 - i] == symbole for i in range(3)):
+        return True
+    return False
+
+def coup_maitre(grille, symbole):
+    adversaire = 'X' if symbole == 'O' else 'O'
+    # Vérifie les coups pour gagner ou bloquer
+    for sym in [symbole, adversaire]:
+        for i in range(3):
+            for j in range(3):
+                if grille[i][j] == " ":
+                    grille[i][j] = sym
+                    if verifier_victoire(grille, sym):
+                        grille[i][j] = " "
+                        return (i, j)
+                    grille[i][j] = " "
+    # Joue un coup aléatoire
+    cases_vides = [(i, j) for i in range(3) for j in range(3) if grille[i][j] == " "]
+    return random.choice(cases_vides)
+
+def tour_joueur(grille):
+    while True:
+        try:
+            coup = input("Joueur X, entrez votre coup (ligne,colonne) : ")
+            ligne, colonne = map(int, coup.split(","))
+            if grille[ligne][colonne] == " ":
+                grille[ligne][colonne] = 'X'
+                break
+            else:
+                print("Case déjà occupée, essayez à nouveau.")
+        except (ValueError, IndexError):
+            print("Entrée invalide, essayez à nouveau.")
+
+def tour_maitre(grille):
+    ligne, colonne = coup_maitre(grille, 'O')
+    grille[ligne][colonne] = 'O'
+    print("Tour du maître du jeu (O)...")
+
+def grille_complete(grille):
+    return all(grille[i][j] != " " for i in range(3) for j in range(3))
+
+def verifier_resultat(grille):
+    if verifier_victoire(grille, 'X'):
+        print("Le joueur a gagné !")
+        return True
+    if verifier_victoire(grille, 'O'):
+        print("Le maître du jeu a gagné !")
+        return True
+    if grille_complete(grille):
+        print("Match nul !")
+        return True
+    return False
+
+def jeu_tictactoe():
+    grille = [[" " for _ in range(3)] for _ in range(3)]
+    while True:
+        afficher_grille(grille)
+        tour_joueur(grille)
+        if verifier_resultat(grille):
+            return True
+        tour_maitre(grille)
+        if verifier_resultat(grille):
+            return False
 
