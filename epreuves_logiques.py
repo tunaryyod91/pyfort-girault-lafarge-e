@@ -1,4 +1,5 @@
 import random
+from random import choice
 
 
 def affiche_batonnets(n):
@@ -59,17 +60,6 @@ def jeu_batonnets():
             return not joueur_tour  # True si le joueur gagne, False si le maître gagne
 
         joueur_tour = not joueur_tour  # Passer le tour à l'autre joueur
-def epreuves_logiques():
-    #print("MODE DEBUG")
-    #print("----------------------------------------")
-    #return True
-    if jeu_batonnets():
-        print("Clé obtenue ! ")
-        return True
-    else:
-        print("Pas de clé gagnée.")
-        return False
-
 
 def afficher_grille(grille):
     for ligne in grille:
@@ -145,3 +135,17 @@ def jeu_tictactoe():
         tour_maitre(grille)
         if verifier_resultat(grille):
             return False
+
+def epreuves_logiques():
+    #print("MODE DEBUG")
+    #print("----------------------------------------")
+    #return True
+    epreuves = [jeu_tictactoe,jeu_batonnets]
+    choix = choice(epreuves)
+    if choix():
+        print("Clé obtenue ! ")
+        return True
+    else:
+        print("Pas de clé gagnée.")
+        return False
+
