@@ -135,7 +135,7 @@ def verifier_resultat(grille):
         return True
     return False
 
-def jeu_morpion():
+def jeu_tictactoe():
     grille = [[" " for _ in range(3)] for _ in range(3)]
     while True:
         afficher_grille(grille)
