@@ -49,16 +49,16 @@ def jeu_batonnets():
 
         # Retirer les bâtonnets
         n -= x
+
+        # Vérifier si le dernier bâtonnet a été retiré
+        if n == 0:
+            if joueur_tour:
+                print("Vous avez retiré le dernier bâtonnet. Vous avez perdu !")
+            else:
+                print("Le maître du jeu a retiré le dernier bâtonnet. Vous avez gagné !")
+            return not joueur_tour  # True si le joueur gagne, False si le maître gagne
+
         joueur_tour = not joueur_tour  # Passer le tour à l'autre joueur
-
-    # Déterminer le perdant
-    if joueur_tour:
-        print("Vous avez retiré le dernier bâtonnet. Vous avez perdu !")
-        return False
-    else:
-        print("Le maître du jeu a retiré le dernier bâtonnet. Vous avez gagné une clé !")
-        return True
-
 def epreuves_logiques():
     #print("MODE DEBUG")
     #print("----------------------------------------")
@@ -145,4 +145,3 @@ def jeu_tictactoe():
         tour_maitre(grille)
         if verifier_resultat(grille):
             return False
-
