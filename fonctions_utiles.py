@@ -78,5 +78,3 @@ def choisir_joueur(equipe):
             print("Entrée invalide. Veuillez entrer un numéro.")
             choix = 0
     return equipe[choix - 1]
-
-
